@@ -1,0 +1,153 @@
+body {
+    font-family: 'Khand', sans-serif;
+    background-color: rgb(77, 77, 77);
+    color: white;
+    font-weight: 100;
+    width: 100%;
+    margin: 0;
+}
+
+p {
+    font-size: larger;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-header-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo, header {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-items {
+    display: flex;
+    flex-direction: row;  /* Make sure this is set to row */
+    gap: 16px;
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.2em;
+    color: white;
+}
+
+#letterR {
+    font-family: 'Khand', sans-serif;
+    font-size: 2em;
+    transition: transform 1s ease-in-out;
+    transform-origin: 50% 50%;
+}
+
+#letterR:hover {
+    cursor: pointer;
+}
+
+.about-me {
+    margin-top: 60em !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.experience-header-container {
+    margin-top: 60em !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+
+}
+
+.experience-tech-certs-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 20px 20px rgba(77, 77, 77, ) inset;
+    border-radius: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.tech-section, .cert-section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.tech-icons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.tech-icons-container .tech-grid-icons img {
+    margin: 0 auto;
+    width: 75px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.cert-icons-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.cert-icons-container .cert-grid-icons img{
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.tech-icons-container .tech-grid-icons img:hover,
+.cert-icons-container .cert-grid-icons img:hover {
+    filter: none;
+}
