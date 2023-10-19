@@ -119,5 +119,25 @@ $(document).ready(function(){
   }).scroll(); //invoke scroll-handler on page-load
 });
 
+//contact information animation
+
+document.addEventListener('DOMContentLoaded', () => {
+  const formContainer = document.querySelector('.contact-form-container');
+
+  let observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              formContainer.style.opacity = '1';
+              formContainer.style.transform = 'translateY(0)';
+          }
+      });
+  }, {
+      threshold: 0.5 // Trigger when at least 10% of the element is in the viewport
+  });
+
+  observer.observe(formContainer);
+});
+
+
 
 
