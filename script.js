@@ -17,6 +17,7 @@ window.addEventListener("scroll", function() {
   if (this.window.scrollY > 50) {
     navbar.style.height = "50px";
     navbar.style.backgroundColor = "#000";
+    navbar.style.width = "100%";
   } else {
     navbar.style.height = "5em";
     navbar.style.backgroundColor = "transparent";
@@ -37,93 +38,66 @@ $("a").on('click', function(event) {
   }
 });
 
-// title animation
-
-$(document).ready(function() {
+$(document).ready(function () {
+  // Fade-in animation for "About Me"
   $("#about-me").hide().fadeIn(3000);
-});
 
-// experience animation
+  let offsetAdjustment = 0;
+  if (window.innerWidth < 768) {
+      offsetAdjustment = 600;
+  }
 
-$(document).ready(function() {
-  $(window).scroll(function() {
-    var scrollPos = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    var elementPos = $('.experience-container').offset().top;
+  $(window).on('scroll resize', function () {  // Added resize event too
+      var scrollPos = $(window).scrollTop();
+      var windowHeight = $(window).height();
 
-    // Check if the .experience-container is in the viewport
-    if (scrollPos + windowHeight > elementPos) {
+      // Experience animations
+      if (scrollPos + windowHeight > $('.experience-container').offset().top + offsetAdjustment) {
+          $('.tech-grid-icons').each(function (i) {
+              setTimeout(function () {
+                  $('.tech-grid-icons').eq(i).animate({
+                      left: '0',
+                      opacity: '1'
+                  }, 2000);
+              }, 200 * (i + 1));
+          });
 
-      // Animate tech icons from the left
-      $('.tech-grid-icons').each(function(i) {
-        setTimeout(function() {
-          $('.tech-grid-icons').eq(i).animate({
-            left: '0',
-            opacity: '1'
-          }, 2000);
-        }, 200 * (i + 1));
-      });
+          $('.cert-grid-icons').each(function (i) {
+              setTimeout(function () {
+                  $('.cert-grid-icons').eq(i).animate({
+                      right: '0',
+                      left: 'auto',
+                      opacity: '1'
+                  }, 2000);
+              }, 200 * (i + 1));
+          });
+      }
 
-      // Animate cert icons from the right
-      $('.cert-grid-icons').each(function(i) {
-        setTimeout(function() {
-          $('.cert-grid-icons').eq(i).animate({
-            right: '0',
-            left: 'auto',
-            opacity: '1'
-          }, 2000);
-        }, 200 * (i + 1));
-      });
+      // School animations
+      if (scrollPos + windowHeight > $('.school-header-container').offset().top + offsetAdjustment) {
+          $('#school-title').addClass('slide-in-from-left');
+          $('.school-header .big-header').addClass('slide-in-from-right');
+          $('.school-header p').addClass('slide-in-from-left');
+      }
 
-    }
-  });
-});
-
-//experience animation
-
-$(document).ready(function() {
-  // Set elements to be hidden initially
-  $(".school-header h1, .school-header h2, .school-header p").addClass("hidden");
-
-  $(window).scroll(function() {
-    var scrollPos = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    var elementPos = $('.school-header-container').offset().top;
-
-    // Check if the element is in the viewport
-    if (scrollPos + windowHeight > elementPos) {
-      $('#school-title').addClass('slide-in-from-left');
-      $('.school-header .big-header').addClass('slide-in-from-right');
-      $('.school-header p').addClass('slide-in-from-left');
-    }
-  });
-});
-
-// project animation
-
-$(document).ready(function(){
-  $(window).scroll(function(){
-      var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-      
-      $(".project-container .project1, .project-container .project2").each(function(){
-          /* Check the location of each desired element */
+      // Project animations
+      var windowBottom = scrollPos + windowHeight;
+      $(".project-container .project1, .project-container .project2").each(function () {
           var objectBottom = $(this).offset().top + $(this).outerHeight();
-          
-          /* If the element is completely within bounds of the window, fade it in */
           if (objectBottom < windowBottom) {
-              if ($(this).css("opacity")==0) {$(this).fadeTo(500,2).css('transform', 'translateX(0)');}
-          } else { //object comes into view (scrolling up)
-              if ($(this).css("opacity")==1) {$(this).fadeTo(500,0).css('transform', 'translateX(100px)');}
+              if ($(this).css("opacity") == 0) {
+                  $(this).fadeTo(500, 2).css('transform', 'translateX(0)');
+              }
+          } else {
+              if ($(this).css("opacity") == 1) {
+                  $(this).fadeTo(500, 0).css('transform', 'translateX(100px)');
+              }
           }
       });
-  }).scroll(); //invoke scroll-handler on page-load
-});
+  }).trigger('scroll');  // Trigger scroll handler on page-load
 
-//contact information animation
-
-document.addEventListener('DOMContentLoaded', () => {
+  // Contact information animation
   const formContainer = document.querySelector('.contact-form-container');
-
   let observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -132,11 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }, {
-      threshold: 0.5 // Trigger when at least 10% of the element is in the viewport
+      threshold: 0.5
   });
-
   observer.observe(formContainer);
 });
+
 
 //sidenav bar
 
@@ -156,6 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   observer.observe(document.body);
+});
+
+// hamburger menu
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  let navbar = document.getElementById('navbar');
+  let sidebar = document.getElementById('sidebar');
+
+  navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+  sidebar.style.display = (sidebar.style.display === 'none' || sidebar.style.display === '') ? 'block' : 'none';
 });
 
 

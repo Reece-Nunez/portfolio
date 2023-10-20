@@ -1,43 +1,36 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Khand', sans-serif;
     background-color: rgb(77, 77, 77);
     color: white;
     font-weight: normal;
-    width: 100%;
-    height: 100%;
     margin: 0;
-    margin-left: 60px !important;
+    min-height: 100vh;
 }
 
 p {
-
     max-width: 540px;
     font-size: 18px;
+    margin: 1em 0;
 }
 
-#navbar {
+/* Hamburger icon hidden by default */
+.menu-icon {
+    display: none;
+}
+
+/* This class will be toggled to show the sidebar and navbar */
+.show-menu {
+    display: block;
+}
+
+#navbar, .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 5em;
     transition: all 0.3s;
-    width: 100%;
     position: sticky;
-    top: 0;
-    z-index: 2;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    height: 5em;
-    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -103,48 +96,25 @@ p {
     display: flex;
     padding: 1em;
     align-items: center;
-    justify-content: flex-start;
 }
 
-.logo-header-container {
+.logo-header-container, .logo, header {
     display: flex;
     align-items: center;
 }
 
-.logo, header {
-    display: flex;
-    align-items: center;
-}
 
 h1 {
     margin: 0px 0px 30px 4px;
-    font-size: clamp(var(--fz-sm), 5vw,var(--fz-md));
-    font-weight: normal;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     word-spacing: 4px;
     letter-spacing: 2px;
+    font-weight: normal;
 }
 
 .big-header {
     margin: 0;
-    font-size: clamp(40px, 8vw, 80px);
-}
-
-h2 {
-    display: block;
-    margin-block-start: .83em;
-    margin-block-end: .83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    font-size: clamp(2.5rem, 8vw, 5rem);
 }
 
 .navigation {
@@ -162,10 +132,10 @@ p {
 
 a {
     text-decoration: none;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 0 2em;
     font-size: 1.2em;
     color: white;
+    transition: color 0.3s;
 }
 
 a:hover {
@@ -183,30 +153,13 @@ a:hover {
     cursor: pointer;
 }
 
-.about-me {
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
+.about-me, .experience-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     max-width: 1000px;
-    padding: 0;
     min-height: 100vh;
-    height: 100vh;
-}
-
-.experience-container {
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 0;
-    min-height: 100vh;
-    height: 100vh;
 }
 
 .experience-tech-certs-container {
@@ -327,8 +280,6 @@ h2 {
 }
 
 .projects-header-container {
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -392,7 +343,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 700px;
     padding: 0;
     min-height: 100vh;
     height: 100vh;
@@ -412,7 +363,7 @@ h2 {
 }
 
 .submit-button {
-    padding: 15px 30px;
+    padding: 10px 10px;
     border-radius: 5px;
     border: none;
     background-color: #83b1cf;
@@ -420,11 +371,247 @@ h2 {
     cursor: pointer;
     transition: background-color .1s;
     margin-bottom: 2em;
+    font-family: 'Khand';
+    font-size: 1.2em;
+    width: 10em;
 }
 
 .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #58788d;
+    letter-spacing: 5px;
+    transition: .5s ease-in-out;
 }
 
+/* smaller screen sizes */
+
+@media (max-width: 412px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 400px;
+    }
+
+    #navbar, .nav-container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 0;
+        background-color: rgb(77, 77, 77);
+    }
+
+    #instagram, #linkedin, #github, #sidebar a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .instagram-container, .linkedin-container, .github-container {
+        padding: 0;
+    }
+
+    #insta-icon, #linked-icon, #github-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .logo-header-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .big-header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .navigation {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .navigation-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+
+    .about-me, .experience-container {
+        padding: 20px 0;
+    }
+
+    .experience-tech-certs-container {
+        flex-direction: column;
+    }
+
+    .project-container {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .project-container .project1, .project-container .project2 {
+        opacity: 1 !important;
+    }
+
+    .project1-image, .project2-image {
+        width: 250px;
+        height: 200px;
+    }
+
+    .project-image label, .project-image label {
+        max-width: 250px !important;
+
+    }
+
+    .menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #83b1cf;
+        margin: 5px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+
+    }
+    
+    #navbar, #sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 1440px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 1440px;
+    }
+
+
+    #sidebar {
+        width: 120px !important;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 0;
+        background-color: rgb(77, 77, 77);
+        margin-left: 1em;
+    }
+
+    #instagram, #linkedin, #github, #sidebar a {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .instagram-container, .linkedin-container, .github-container {
+        padding: 0;
+    }
+
+    #insta-icon, #linked-icon, #github-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .logo-header-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .big-header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .navigation {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+
+    a {
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+
+    .about-me, .experience-container {
+        padding: 20px 0;
+    }
+
+    .experience-tech-certs-container {
+        flex-direction: column;
+    }
+
+    .project-container {
+        flex-direction: column;
+        max-width: 1440px;
+    }
+
+    .project-container .project1, .project-container .project2 {
+        opacity: 1 !important;
+        padding-left: 0;
+    }
+
+    .project1-image, .project2-image {
+        max-width: 1440px;
+    }
+
+    .menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 2em;
+
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #83b1cf;
+        margin: 5px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+
+    }
+    
+    #navbar, #sidebar {
+        display: none;
+    }
+}
 
 
