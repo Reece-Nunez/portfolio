@@ -112,25 +112,7 @@ $(document).ready(function () {
 });
 
 
-//sidenav bar
 
-document.addEventListener('DOMContentLoaded', () => {
-  const sidebar = document.getElementById('sidebar');
-
-  let observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        sidebar.style.width = "200px";
-      } else {
-        sidebar.style.width = "30px";
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  observer.observe(document.body);
-});
 
 // hamburger menu
 

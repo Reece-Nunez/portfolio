@@ -35,68 +35,6 @@ p {
     z-index: 1000;
 }
 
-#sidebar {
-    position: fixed;
-    top: 5em;
-    left: 0;
-    height: calc(100% - 5em);
-    width: 60px;
-    background-color: #333;
-    overflow-x: hidden;
-    z-index: 1;
-    transition: all 0.3s ease-in-out;
-}
-
-#sidebar a {
-    padding: 20px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-#sidebar a:hover {
-    color: #f1f1f1;
-    transform: translateX(20px);  /* Keeps the hover effect */
-}
-
-#instagram, #linkedin, #github {
-    padding-left: 20px;  /* Common padding-left */
-}
-
-#insta-icon {
-    background: url('images/icons/instagram.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-}
-
-#linked-icon {
-    background: url('images/icons/linkedin.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-}
-
-#github-icon {
-    background: url('images/icons/github.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-}
-
-.instagram-container, .linkedin-container, .github-container {
-    display: flex;
-    padding: 1em;
-    align-items: center;
-}
 
 .logo-header-container, .logo, header {
     display: flex;
