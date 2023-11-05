@@ -104,7 +104,7 @@ a:hover {
     display: inline-block;
     padding: 10px 10px;
     margin: 5px;
-    background-color: #007bff;
+    background-color: #83b1cf;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -115,7 +115,9 @@ a:hover {
   }
 
   .download-button:hover {
-    background-color: #0056b3;
+    background-color: #509cee;
+    transition: 400ms ease-in-out 100ms;
+    color: black;
   }
 
 .experience-tech-certs-container {
@@ -275,16 +277,7 @@ h2 {
     padding: 2em;
 }
 
-.project1 {
-    padding-left: 0;
-}
 
-.project-container .project1,
-.project-container .project2 {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 1s ease-in-out;
-}
 
 .contact-form-container {
     opacity: 0;

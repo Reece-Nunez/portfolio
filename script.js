@@ -80,20 +80,7 @@ $(document).ready(function () {
           $('.school-header p').addClass('slide-in-from-left');
       }
 
-      // Project animations
-      var windowBottom = scrollPos + windowHeight;
-      $(".project-container .project1, .project-container .project2").each(function () {
-          var objectBottom = $(this).offset().top + $(this).outerHeight();
-          if (objectBottom < windowBottom) {
-              if ($(this).css("opacity") == 0) {
-                  $(this).fadeTo(500, 2).css('transform', 'translateX(0)');
-              }
-          } else {
-              if ($(this).css("opacity") == 1) {
-                  $(this).fadeTo(500, 0).css('transform', 'translateX(100px)');
-              }
-          }
-      });
+      
   }).trigger('scroll');  // Trigger scroll handler on page-load
 
   // Contact information animation
