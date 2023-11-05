@@ -333,11 +333,144 @@ h2 {
 
 /* smaller screen sizes */
 
-@media (max-width: 412px) {
+@media (max-width: 228px) {
     body {
         padding-left: 10px;
         padding-right: 10px;
+        max-width: 228px;
+        margin: 0 !important;
+    }
+
+    #navbar, .nav-container {
+        flex-direction: column;
+    }
+
+    .about-me, .experience-container,
+    .school-header, .projects-header-container,
+     .contact-form-container {
+        min-height: 80vh;
+        height: 80vh;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 0;
+        background-color: rgb(77, 77, 77);
+    }
+
+    #instagram, #linkedin, #github, #sidebar a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .instagram-container, .linkedin-container, .github-container {
+        padding: 0;
+    }
+
+    #insta-icon, #linked-icon, #github-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .logo-header-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .big-header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .navigation {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .navigation-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+
+    .about-me, .experience-container {
+        padding: 20px 0;
+    }
+
+    .experience-tech-certs-container {
+        flex-direction: column;
+    }
+
+    .project-container {
+        flex-direction: column;
         max-width: 400px;
+    }
+
+    .project-container .project1, .project-container .project2 {
+        opacity: 1 !important;
+    }
+
+    .project1-image, .project2-image {
+        width: 250px;
+        height: 200px;
+    }
+
+    .project-image label, .project-image label {
+        max-width: 250px !important;
+
+    }
+
+    .menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #83b1cf;
+        margin: 5px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+
+    }
+    
+    #navbar, #sidebar {
+        display: none;
+    }
+
+    .input-field {
+        width: 90%;
+    }
+}
+
+@media (max-width: 581px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 581px;
+        margin: 0 !important;
     }
 
     #navbar, .nav-container {
@@ -464,32 +597,8 @@ h2 {
         padding-left: 10px;
         padding-right: 10px;
         max-width: 1440px;
-    }
-
-
-    #sidebar {
-        width: 120px !important;
-        height: auto;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        padding: 10px 0;
-        background-color: rgb(77, 77, 77);
-        margin-left: 1em;
-    }
-
-    #instagram, #linkedin, #github, #sidebar a {
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    .instagram-container, .linkedin-container, .github-container {
-        padding: 0;
-    }
-
-    #insta-icon, #linked-icon, #github-icon {
-        width: 15px;
-        height: 15px;
+        margin: 10em;
+        margin-top: 0;
     }
 
     .logo-header-container {
@@ -512,7 +621,6 @@ h2 {
     }
 
     .navigation {
-        margin-top: 20px;
         justify-content: center;
     }
 
@@ -540,9 +648,175 @@ h2 {
         padding-left: 0;
     }
 
-    .project1-image, .project2-image {
-        max-width: 1440px;
+    .menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 2em;
+
     }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #83b1cf;
+        margin: 5px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+
+    }
+    
+    #navbar, #sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 1024px;
+        margin: 15em;
+        margin-top: 0;
+    }
+
+    .about-me, .experience-container,
+    .school-header, .projects-header-container,
+     .contact-form-container {
+        min-height: 60vh;
+        height: 60vh;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .big-header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
+
+
+    a {
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+
+    .about-me, .experience-container {
+        padding: 20px 0;
+    }
+
+    .experience-tech-certs-container {
+        flex-direction: column;
+    }
+
+    .project-container {
+        flex-direction: column;
+        max-width: 1024px;
+    }
+
+    .project-container .project1, .project-container .project2 {
+        opacity: 1 !important;
+        padding-left: 0;
+    }
+
+
+    .menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 2em;
+
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #83b1cf;
+        margin: 5px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+
+    }
+    
+    #navbar, #sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 1006px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 1006px;
+        margin: 15em;
+        margin-top: 0;
+    }
+
+    .about-me, .experience-container,
+    .school-header, .projects-header-container,
+     .contact-form-container {
+        min-height: 90vh;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .big-header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
+
+
+    a {
+        font-size: 1rem;
+        padding: 0.5em;
+    }
+
+    .about-me, .experience-container {
+        padding: 20px 0;
+    }
+
+    .experience-tech-certs-container {
+        flex-direction: column;
+    }
+
+    .project-container {
+        flex-direction: column;
+        max-width: 1006px;
+    }
+
+    .project-container .project1, .project-container .project2 {
+        opacity: 1 !important;
+        padding-left: 0;
+    }
+
 
     .menu-icon {
         display: block;
