@@ -76,6 +76,7 @@ $(document).ready(function () {
       // School animations
       if (scrollPos + windowHeight > $('.school-header-container').offset().top + offsetAdjustment) {
           $('#school-title').addClass('slide-in-from-left');
+          $('#degree-title').addClass('slide-in-from-left');
           $('.school-header .big-header').addClass('slide-in-from-right');
           $('.school-header p').addClass('slide-in-from-left');
       }

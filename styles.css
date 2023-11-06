@@ -207,7 +207,7 @@ h2 {
 
   /* Slide-in animations */
 .slide-in-from-left {
-    animation: slideInFromLeft 3s forwards;
+    animation: slideInFromLeft 4s forwards;
 }
 
 .slide-in-from-right {
