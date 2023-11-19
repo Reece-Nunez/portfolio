@@ -4,7 +4,21 @@ body {
     color: white;
     font-weight: normal;
     margin: 0;
-    min-height: 100vh;
+}
+
+.website-content-container {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: none;
+    height: min-content;
+    gap: 200px;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 80px;
 }
 
 p {
@@ -83,21 +97,17 @@ a:hover {
 #letterR {
     font-family: 'Khand', sans-serif;
     font-size: 2em;
-    transition: transform 1s ease-in-out;
-    transform-origin: 50% 50%;
 }
 
 #letterR:hover {
     cursor: pointer;
 }
 
+
 .about-me, .experience-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
-    max-width: 1000px;
-    min-height: 100vh;
 }
 
 .download-button {
@@ -112,13 +122,13 @@ a:hover {
     cursor: pointer;
     width: fit-content;
     text-align: center;
-  }
+}
 
-  .download-button:hover {
+.download-button:hover {
     background-color: #509cee;
     transition: 400ms ease-in-out 100ms;
     color: black;
-  }
+}
 
 .experience-tech-certs-container {
     display: flex;
@@ -183,16 +193,11 @@ h2 {
 }
 
 .school-header {
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1000px;
     padding: 0;
-    min-height: 100vh;
-    height: 100vh;
     align-items: flex-start;
 }
 
@@ -242,16 +247,14 @@ h2 {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1000px;
     padding: 0;
-    min-height: 100vh;
-    height: 100vh;
     align-items: flex-start;
 }
 
-.project-container {
+.project-container{
     display: flex;
 }
+
 
 .project1-image {
     background-image: url(images/projects/angular-map-project.jpg);
@@ -273,8 +276,18 @@ h2 {
     border-radius: 5px;
 }
 
-.project1, .project2{
-    padding: 2em;
+.project3-image {
+    background-image: url(images/projects/Interactive\ design.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.project1 {
+    padding-right: 40px;
 }
 
 
@@ -283,19 +296,9 @@ h2 {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s, transform 1s;
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 700px;
     padding: 0;
-    min-height: 100vh;
-    height: 100vh;
 }
 
 .input-field {
@@ -319,7 +322,6 @@ h2 {
     color: #fff;
     cursor: pointer;
     transition: background-color .1s;
-    margin-bottom: 2em;
     font-family: 'Khand';
     font-size: 1.2em;
     width: 10em;
@@ -328,15 +330,15 @@ h2 {
 .submit-button:hover {
     background-color: #58788d;
     letter-spacing: 5px;
-    transition: .5s ease-in-out;
+    transition: .5s ease;
 }
 
 .up-arrow-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5em;
-    margin-top: 0;
+    margin: auto;
+    margin-bottom: 5em;
 }
 
 
@@ -356,7 +358,7 @@ h2 {
 
     .about-me, .experience-container,
     .school-header, .projects-header-container,
-     .contact-form-container {
+    .contact-form-container {
         min-height: 80vh;
         height: 80vh;
     }

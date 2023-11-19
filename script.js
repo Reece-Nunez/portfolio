@@ -1,15 +1,4 @@
-// script to rotate logo letter
-const letterR = document.getElementById("letterR");
 
-letterR.addEventListener("mouseover", function() {
-  // Rotate 360 degrees when hovered
-    this.style.transform = "rotate(360deg)";
-});
-
-letterR.addEventListener("mouseout", function() {
-  // Return to original state when mouse leaves
-    this.style.transform = "rotate(0deg)";
-});
 
 // script to detect the scroll position and adjust the navbar properties
 window.addEventListener("scroll", function() {
