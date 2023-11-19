@@ -286,11 +286,28 @@ h2 {
     border-radius: 5px;
 }
 
+.project4-image {
+    background-image: url(images/projects/Android\ Application.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 300px;
+    border-radius: 5px;
+}
+
 .project1 {
     padding-right: 40px;
 }
 
+.project3 {
+    max-width: 500px;
+    padding-right: 40px;
+}
 
+.projects-second-container {
+    display: flex;
+}
 
 .contact-form-container {
     opacity: 0;
