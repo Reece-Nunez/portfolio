@@ -276,6 +276,11 @@ h2 {
     border-radius: 5px;
 }
 
+.project2-image:hover, .project1-image:hover, .project3-image:hover, .project4-image:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .project3-image {
     background-image: url(images/projects/Interactive\ design.jpg);
     background-size: cover;
